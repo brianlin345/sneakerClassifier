@@ -16,8 +16,6 @@ def image_upload(request):
             sneakerImage = sneakerImageForm.save()
             sneakerImage.sneaker_class = get_prediction(sneakerImage.sneaker_image.name)
             sneakerImage.sneaker_image_name = format_image_name(sneakerImage.sneaker_image.url)
-            sneakerImage.prediction_valid = False
-            sneakerImage.prediction_validated = False
             sneakerImage.save()
 
             return redirect('sneakerClassification:results', image_name = sneakerImage.sneaker_image_name)

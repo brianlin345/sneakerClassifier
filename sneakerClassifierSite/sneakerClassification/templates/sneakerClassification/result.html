@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+    {% if sneakerImage %}
+      <p>{{ sneakerImage.sneaker_image_name }}</p>
+      <img src = "{{ sneakerImage.sneaker_image.url }}">
+      <p>This image was classified as: {{ sneakerImage.sneaker_class }}</p>
+      {% endif %}
+
+  </body>
+</html>

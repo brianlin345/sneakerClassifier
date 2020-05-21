@@ -6,11 +6,19 @@
   </head>
   <body>
 
-    {% if sneakerImage %}
-      <p>{{ sneakerImage.sneaker_image_name }}</p>
-      <img src = "{{ sneakerImage.sneaker_image.url }}">
-      <p>This image was classified as: {{ sneakerImage.sneaker_class }}</p>
-      {% endif %}
+    {% if sneaker_image %}
+      <p>{{ sneaker_image.sneaker_image_name }}</p>
+      <img src = "{{ sneaker_image.sneaker_image.url }}">
+      <p>This image was classified as: {{ sneaker_image.sneaker_class }}</p>
+    {% endif %}
+    {% if sneaker_image.prediction_validated is False %}
+      <p>Is this classification correct?</p>
+      <form action = "" method = "post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Submit</button>
+      </form>
+    {% endif %}
 
   </body>
 </html>

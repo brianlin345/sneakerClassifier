@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    {% if sneaker_image_list %}
+      <table>
+        {% for sneaker_image in sneaker_image_list %}
+          <tr>
+            <td>
+              <a href = "{% url 'sneakerClassification:results' sneaker_image.sneaker_image_name %}">
+              {{ sneaker_image.sneaker_image_name }}</a>
+            </td>
+            <td><img src = "{{ sneaker_image.sneaker_image.url }}"></td>
+            <td>Classification: {{ sneaker_image.sneaker_class }}</td>
+          </tr>
+        {% endfor %}
+      </table>
+    {% endif %}
+  </body>
+</html>

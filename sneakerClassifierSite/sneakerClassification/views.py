@@ -4,7 +4,7 @@ from django.template import loader
 from django.conf import settings
 
 from .models import sneakerImage
-from .forms import uploadSneakerImage
+from .forms import uploadSneakerImage, validateSneakerClassification
 
 import os
 from sneakerClassification.kerasClassifier import predict_image
@@ -38,5 +38,20 @@ def get_prediction(image_name):
 
 def results(request, image_name):
     resultSneakerImage = sneakerImage.objects.get(sneaker_image_name = image_name)
-    context = {"sneakerImage": resultSneakerImage}
+    if request.method == 'POST':
+        validateClassificationForm = validateSneakerClassification(request.POST)
+        if validateClassificationForm.is_valid():
+            validateSubmission = validateClassificationForm.cleaned_data['valid']
+            resultSneakerImage.prediction_valid = validateSubmission
+            resultSneakerImage.prediction_validated = True
+            resultSneakerImage.save()
+
+            return redirect('sneakerClassification:list')
+    else:
+        validateClassificationForm = validateSneakerClassification()
+    context = {"sneaker_image": resultSneakerImage, "form": validateClassificationForm}
     return render(request, "sneakerClassification/result.html", context)
+
+def list_results(request):
+    context = {"sneaker_image_list": sneakerImage.objects.order_by('-upload_time')[:5]}
+    return render(request, "sneakerClassification/list.html", context)

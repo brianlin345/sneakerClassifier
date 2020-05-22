@@ -1,16 +1,61 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+
   <head>
     <meta charset="utf-8">
     <title></title>
+    {% load static %}
+
+    <link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'sneakerClassification/index_style.css' %}">
   </head>
+
   <body>
-    
-    <form action = "" method = "post" enctype="multipart/form-data">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Upload</button>
-    </form>
+    <nav class=nav-bar>
+      <div class=top-nav>
+        <ul>
+          <li>
+            <a class=nav-link id=nav-left href="">Upload</a>
+          </li>
+          <li>
+            <a class=nav-main>Sneaker Classifier</a>
+          </li>
+          <li>
+            <a class=nav-link id=nav-right href="list">View</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class=upload-parent>
+      <div class=info-flex>
+        <img src="https://c.static-nike.com/a/images/t_prod_ss/w_960,c_limit,f_auto/pfbljfz63onbr009awmr/air-jordan-1-retro-royal.jpg" class=site-image>
+        <img src=https://c.static-nike.com/a/images/t_prod_ss/w_960,c_limit,f_auto/aab05bdqkpx8tmwno53i/nike-air-jordan-4-retro-og-bred-release-date.jpg class=site-image>
+        <img src="https://c.static-nike.com/a/images/t_prod_ss/w_480,c_limit,q_auto,f_auto/g35qh1pqd6mcqejmpgf1/air-jordan-11-concord-release-date.jpg" class=site-image>
+
+        <p class=site-info>
+          This website uses a Sequential model created with Keras to classify different types of sneakers. The model can currently classify:
+        </p>
+        <ul class=site-classes>
+          <li>Jordan 1,</li>
+          <li>Jordan 4,</li>
+          <li>Jordan 11,</li>
+          <li>Air Force 1</li>
+        </ul>
+      </div>
+      <div class=upload-flex>
+        <div class=upload-info>
+          To classify, upload an image below!
+        </div>
+        <div class=upload-form>
+          <form action = "" method = "post" enctype="multipart/form-data">
+              {% csrf_token %}
+              {{ form.as_p }}
+              <button type="submit">Upload</button>
+          </form>
+        </div>
+      </div>
+    </div>
 
   </body>
+
 </html>

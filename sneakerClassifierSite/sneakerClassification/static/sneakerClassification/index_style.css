@@ -1,0 +1,132 @@
+body {
+  margin: 0;
+  overflow: hidden;
+}
+
+.top-nav {
+  width: 100vw;
+  height: 17vh;
+  display: table;
+}
+
+.top-nav a {
+  text-decoration: none;
+  padding: 2vw;
+  font-family: 'Oxygen', sans-serif;
+  display: block;
+  height: 100%;
+}
+
+.nav-main {
+  font-size: 5vw;
+  color: white;
+  background-color: #116e11;
+  border: 2px solid black;
+  border-top: 0px;
+  border-radius: 0px 0px 10px 10px;
+}
+
+.nav-link {
+  font-size: 4vw;
+  color: #333333;
+}
+
+#nav-left {
+  border-radius: 0px 0px 7px 0px;
+}
+
+#nav-right {
+  border-radius: 0px 0px 0px 7px;
+}
+
+.nav-link:hover {
+  background-color: #d3d3d3;
+}
+
+.top-nav li {
+  list-style-type: none;
+  margin: 0 2vw;
+  text-align: center;
+  vertical-align: middle;
+  display: table-cell;
+}
+
+.top-nav ul {
+  padding: 0;
+  margin: 0;
+  display: table-row;
+}
+
+.upload-parent {
+  display: flex;
+  flex-direction: row;
+  height: 83vh;
+}
+
+.info-flex {
+  width: 55%;
+  height: 100%;
+}
+
+.upload-flex {
+  width: 45%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.site-info {
+  font-size: 2vw;
+  font-family: 'Oxygen', sans-serif;
+  padding: 10px;
+  margin: 0px;
+}
+
+.site-classes {
+  font-size: 2vw;
+  font-family: 'Oxygen', sans-serif;
+  padding: 10px;
+  padding-top: 0px;
+  margin: 0px;
+}
+
+.site-classes li {
+  display: inline;
+}
+
+.site-image {
+  width: 31%;
+  height: auto;
+  padding: 0px;
+  margin: 0px;
+}
+
+.upload-info {
+  font-size: 3vw;
+  font-family: 'Oxygen', sans-serif;
+  padding: 10px;
+  margin: 0px;
+  color: #116e11;
+  height: 40%;
+  text-align: center;
+}
+
+.upload-form {
+  text-align: center;
+  height: 20%;
+
+}
+
+.upload-form input {
+  font-size: 2vw;
+  font-family: 'Oxygen', sans-serif;
+  padding: 5px;
+}
+
+.upload-form button {
+  font-size: 2vw;
+  font-family: 'Oxygen', sans-serif;
+  border: 1px solid grey;
+}

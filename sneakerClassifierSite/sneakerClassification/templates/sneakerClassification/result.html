@@ -1,24 +1,62 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+
   <head>
+    {% load static %}
+
     <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'sneakerClassification/result_style.css' %}">
     <title></title>
   </head>
+
   <body>
-
+    <nav class=nav-bar>
+      <div class=top-nav>
+        <ul>
+          <li>
+            <a class=nav-link id=nav-left href="{% url 'sneakerClassification:index'%}">Upload</a>
+          </li>
+          <li>
+            <a class=nav-main>Sneaker Classifier</a>
+          </li>
+          <li>
+            <a class=nav-link id=nav-right href="{% url 'sneakerClassification:list'%}">View</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
     {% if sneaker_image %}
-      <p>{{ sneaker_image.sneaker_image_name }}</p>
-      <img src = "{{ sneaker_image.sneaker_image.url }}">
-      <p>This image was classified as: {{ sneaker_image.sneaker_class }}</p>
+    <div class=result-parent>
+      <div class=img-name>
+        {{ sneaker_image.sneaker_image_name }}
+      </div>
+      <div class=img-info>
+        <div class=img-file>
+          <img src = "{{ sneaker_image.sneaker_image.url }}">
+        </div>
+        <div class=valid-div>
+          <div class=valid-info>
+            <p>
+              This image was classified as: <br><strong>{{ sneaker_image.sneaker_class }}</strong>
+            </p>
+          </div>
+            <div class=valid-form>
+              {% if sneaker_image.prediction_validated is False %}
+              <p>Is this classification correct?</p>
+              <form action = "" method = "post">
+                {% csrf_token %}
+                {{ form.valid }}
+                <button type="submit">Submit</button>
+              </form>
+              {% endif %}
+              {% if sneaker_image.prediction_validated is True %}
+              {% endif %}
+            </div>
+        </div>
+      </div>
+    </div>
     {% endif %}
-    {% if sneaker_image.prediction_validated is False %}
-      <p>Is this classification correct?</p>
-      <form action = "" method = "post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Submit</button>
-      </form>
-    {% endif %}
-
   </body>
+
 </html>

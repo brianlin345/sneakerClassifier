@@ -2,6 +2,8 @@ from django.db import models
 from django.forms import ModelForm
 from datetime import datetime
 
+BOOL_CHOICES = ((True, 'Yes'), (False, 'No'))
+
 class sneakerImage(models.Model):
     sneaker_class = models.CharField("class of this shoe given by sequential model", max_length = 100)
     sneaker_image = models.ImageField(upload_to='shoes')

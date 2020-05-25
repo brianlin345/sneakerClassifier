@@ -1,23 +1,61 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+
   <head>
+    {% load static %}
+
     <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'sneakerClassification/list_style.css' %}">
     <title></title>
   </head>
+
   <body>
+    <nav class=nav-bar>
+      <div class=top-nav>
+        <ul>
+          <li>
+            <a class=nav-link id=nav-left href="{% url 'sneakerClassification:index'%}">Upload</a>
+          </li>
+          <li>
+            <a class=nav-main>Sneaker Classifier</a>
+          </li>
+          <li>
+            <a class=nav-link id=nav-right href="{% url 'sneakerClassification:list'%}">View</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
     {% if sneaker_image_list %}
-      <table>
-        {% for sneaker_image in sneaker_image_list %}
-          <tr>
-            <td>
-              <a href = "{% url 'sneakerClassification:results' sneaker_image.sneaker_image_name %}">
-              {{ sneaker_image.sneaker_image_name }}</a>
-            </td>
-            <td><img src = "{{ sneaker_image.sneaker_image.url }}"></td>
-            <td>Classification: {{ sneaker_image.sneaker_class }}</td>
-          </tr>
-        {% endfor %}
-      </table>
+    <div class=list-container>
+      {% for sneaker_image in sneaker_image_list %}
+      <a href = "{% url 'sneakerClassification:results' image_name=sneaker_image.sneaker_image_name %}">
+      <div class=list-elem>
+        {% if sneaker_image.prediction_validated is False %}
+        <div class = overlay-none>
+          Classification not validated
+        </div>
+        {% elif sneaker_image.prediction_valid is True %}
+        <div class = overlay-true>
+          Classification validated as: <br><strong>True</strong>
+        </div>
+        {% else %}
+        <div class = overlay-false>
+          Classification validated as: <br><strong>False</strong>
+        </div>
+        {% endif %}
+        <div class=img-name>
+          {{ sneaker_image.sneaker_image_name }}
+        </div>
+        <div class=img-file>
+          <img src="{{ sneaker_image.sneaker_image.url }}">
+        </div>
+        <div class=class-info>
+            Classification: <strong>{{ sneaker_image.sneaker_class }}</strong>
+        </div>
+      </div>
+      </a>
+      {% endfor %}
+    </div>
     {% endif %}
   </body>
-</html>

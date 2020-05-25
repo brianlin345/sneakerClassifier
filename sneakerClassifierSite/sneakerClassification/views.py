@@ -53,5 +53,5 @@ def results(request, image_name):
     return render(request, "sneakerClassification/result.html", context)
 
 def list_results(request):
-    context = {"sneaker_image_list": sneakerImage.objects.order_by('-upload_time')[:5]}
+    context = {"sneaker_image_list": sneakerImage.objects.order_by('-upload_time')[:4]}
     return render(request, "sneakerClassification/list.html", context)

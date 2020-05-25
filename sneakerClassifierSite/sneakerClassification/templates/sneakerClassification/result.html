@@ -49,8 +49,15 @@
                 {{ form.valid }}
                 <button type="submit">Submit</button>
               </form>
-              {% endif %}
-              {% if sneaker_image.prediction_validated is True %}
+              {% else %}
+              <p>
+                This classification was validated as: <br>
+                {% if sneaker_image.prediction_valid is True %}
+                  <strong class=valid-correct>Correct</strong>
+                {% else %}
+                  <strong class=valid-incorrect>Incorrect</strong>
+                {% endif %}
+              </p>
               {% endif %}
             </div>
         </div>

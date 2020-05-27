@@ -29,7 +29,7 @@
     {% if sneaker_image_list %}
     <div class=list-container>
       {% for sneaker_image in sneaker_image_list %}
-      <a href = "{% url 'sneakerClassification:results' image_name=sneaker_image.sneaker_image_name %}">
+      <a href = "{% url 'sneakerClassification:results' image_name=sneaker_image.sneaker_image_name %}" class=result-link>
       <div class=list-elem>
         {% if sneaker_image.prediction_validated is False %}
         <div class = overlay-none>

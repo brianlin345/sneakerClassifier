@@ -8,10 +8,10 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 
-image_size = (125, 250)
+image_size = (250, 250)
 h5_path = 'sneakerClassification/saved_models'
-h5_file = 'shoe_model_class4.h5'
-class_names = ['Jordan 1', 'Jordan 4', 'Jordan 11', 'Air Force 1']
+h5_file = 'shoe_model_class4_layer3.h5'
+class_names = ['Jordan 4', 'Jordan 1', 'Air Force 1', 'Jordan 11']
 
 
 def load_saved_model():
@@ -26,5 +26,8 @@ def predict_image(image_dir, image_name):
     img_array = np.expand_dims(img_array, axis=0)
     curr_image = np.vstack([img_array])
 
-    prediction = np.argmax(loaded_model.predict(curr_image, batch_size=10), axis = -1)[0]
+    prediction_list = loaded_model.predict(curr_image, batch_size=10)
+    print(prediction_list)
+
+    prediction = np.argmax(prediction_list, axis = -1)[0]
     return class_names[prediction]

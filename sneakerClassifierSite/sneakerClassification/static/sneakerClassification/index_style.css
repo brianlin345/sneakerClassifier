@@ -5,8 +5,10 @@ body {
 
 .top-nav {
   width: 100vw;
-  height: 15vh;
+  height: 13vh;
   display: table;
+  position: fixed;
+  top: 0;
 }
 
 .top-nav a {
@@ -29,6 +31,7 @@ body {
 .nav-link {
   font-size: 3vw;
   color: #333333;
+  border: 2px solid #a9a9a9;
 }
 
 #nav-left {
@@ -60,7 +63,7 @@ body {
 .upload-parent {
   display: flex;
   flex-direction: row;
-  height: 85vh;
+  height: 87vh;
 }
 
 .info-flex {

@@ -17,19 +17,45 @@ body {
   padding: 0px;
   margin: 0px;
   text-decoration: none;
-  padding: 1vw;
   display: block;
   height: 100%;
+}
+
+.nav-logo {
+  display:flex;
+  flex-direction:row;
+  width:60vw;
+  height:10vh;
+  background-color: #116e11;
+  border: 2px solid black;
+  border-top: 0px;
+  border-radius: 0px 0px 10px 10px;
+}
+
+.logo-container {
+  width:30%;
+  text-align: right;
+}
+
+.title-container {
+  width:70%;
+  padding-left: 1vw;
+  text-align: left;
+}
+
+.menu-container {
+  width:20vw;
 }
 
 .nav-main {
   font-size: 3.5vw;
   color: white;
-  background-color: #116e11;
-  border: 2px solid black;
-  border-top: 0px;
-  border-radius: 0px 0px 10px 10px;
   font-family: 'Poppins', sans-serif;
+}
+
+.logo-image {
+  width: auto;
+  height:100%;
 }
 
 .nav-link {
@@ -72,7 +98,7 @@ body {
   display: grid;
   grid-template-columns: 50vw 50vw;
   position:relative;
-  top:15vh;
+  top:10vh;
 }
 
 .result-link {

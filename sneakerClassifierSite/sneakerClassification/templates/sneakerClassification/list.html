@@ -15,13 +15,20 @@
     <nav class=nav-bar>
       <div class=top-nav>
         <ul>
-          <li>
+          <li class=menu-container>
             <a class=nav-link id=nav-left href="{% url 'sneakerClassification:index'%}">Upload</a>
           </li>
           <li>
+            <div class=nav-logo>
+            <div class=logo-container>
+              <img src="{% static 'sneakerClassification/logo.png' %}" class=logo-image>
+            </div>
+            <div class=title-container>
             <a class=nav-main>SneakerClassifier</a>
+            </div>
+            </div>
           </li>
-          <li>
+          <li class=menu-container>
             <a class=nav-link id=nav-right href="{% url 'sneakerClassification:list'%}">View</a>
           </li>
         </ul>

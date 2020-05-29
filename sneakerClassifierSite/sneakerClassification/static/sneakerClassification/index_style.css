@@ -5,33 +5,34 @@ body {
 
 .top-nav {
   width: 100vw;
-  height: 13vh;
+  height: 8vh;
   display: table;
-  position: fixed;
-  top: 0;
 }
 
 .top-nav a {
+  padding: 0px;
+  margin: 0px;
   text-decoration: none;
-  padding: 2vw;
-  font-family: 'Oxygen', sans-serif;
+  padding: 1vw;
   display: block;
   height: 100%;
 }
 
 .nav-main {
-  font-size: 4vw;
+  font-size: 3.5vw;
   color: white;
   background-color: #116e11;
   border: 2px solid black;
   border-top: 0px;
   border-radius: 0px 0px 10px 10px;
+  font-family: 'Poppins', sans-serif;
 }
 
 .nav-link {
   font-size: 3vw;
   color: #333333;
   border: 2px solid #a9a9a9;
+  font-family: 'Oxygen', sans-serif;
 }
 
 #nav-left {
@@ -47,23 +48,24 @@ body {
 }
 
 .top-nav li {
+  padding: 0px;
+  margin: 0px;
   list-style-type: none;
-  margin: 0 2vw;
   text-align: center;
   vertical-align: middle;
   display: table-cell;
 }
 
 .top-nav ul {
-  padding: 0;
-  margin: 0;
+  padding: 0px;
+  margin: 0px;
   display: table-row;
 }
 
 .upload-parent {
   display: flex;
   flex-direction: row;
-  height: 87vh;
+  height: 92vh;
 }
 
 .info-flex {
@@ -119,7 +121,6 @@ body {
 .upload-form {
   text-align: center;
   height: 20%;
-
 }
 
 .upload-form input {

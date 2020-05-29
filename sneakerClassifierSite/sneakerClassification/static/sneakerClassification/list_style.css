@@ -6,7 +6,7 @@ body {
 
 .top-nav {
   width: 100vw;
-  height: 13vh;
+  height: 8vh;
   display: table;
   position: fixed;
   top: 0;
@@ -14,20 +14,22 @@ body {
 }
 
 .top-nav a {
+  padding: 0px;
+  margin: 0px;
   text-decoration: none;
-  padding: 2vw;
-  font-family: 'Oxygen', sans-serif;
+  padding: 1vw;
   display: block;
   height: 100%;
 }
 
 .nav-main {
-  font-size: 4vw;
+  font-size: 3.5vw;
   color: white;
   background-color: #116e11;
   border: 2px solid black;
   border-top: 0px;
   border-radius: 0px 0px 10px 10px;
+  font-family: 'Poppins', sans-serif;
 }
 
 .nav-link {
@@ -35,6 +37,7 @@ body {
   color: #333333;
   background-color: white;
   border: 2px solid #a9a9a9;
+  font-family: 'Oxygen', sans-serif;
 }
 
 #nav-left {
@@ -50,6 +53,8 @@ body {
 }
 
 .top-nav li {
+  padding: 0px;
+  margin: 0px;
   list-style-type: none;
   margin: 0 2vw;
   text-align: center;
@@ -67,7 +72,7 @@ body {
   display: grid;
   grid-template-columns: 50vw 50vw;
   position:relative;
-  top:18.5vh;
+  top:15vh;
 }
 
 .result-link {
@@ -83,7 +88,7 @@ body {
   flex-direction: column;
   border: 2px solid #a9a9a9;
   border-radius: 3%;
-  height: 43.5vh;
+  height: 46vh;
 }
 
 .img-name {
@@ -128,7 +133,7 @@ body {
 
 .overlay-none {
   position:absolute;
-  height: 43.5vh;
+  height: 46vh;
   width:49.7%;
   z-index:2;
   background-color:#d3d3d3;
@@ -140,7 +145,7 @@ body {
   font-size: 2.5vw;
   font-family: 'Oxygen', sans-serif;
   color:#333333;
-  border-radius: 3%;
+  border-radius: 2.5%;
 }
 
 .overlay-none:hover {
@@ -149,7 +154,7 @@ body {
 
 .overlay-true {
   position:absolute;
-  height: 43.5vh;
+  height: 46vh;
   width:49.7%;
   z-index:2;
   background-color:#116e11;
@@ -161,7 +166,7 @@ body {
   font-size:2.5vw;
   font-family:'Oxygen', sans-serif;
   color:#d3d3d3;
-  border-radius: 3%;
+  border-radius: 2.5%;
 }
 
 .overlay-true:hover {
@@ -170,7 +175,7 @@ body {
 
 .overlay-false {
   position:absolute;
-  height: 43.5vh;
+  height: 46vh;
   width:49.7%;
   z-index:2;
   background-color:#FF4C4C;
@@ -182,7 +187,7 @@ body {
   font-size:2.5vw;
   font-family:'Oxygen', sans-serif;
   color:#d3d3d3;
-  border-radius: 3%;
+  border-radius: 2.5%;
 }
 
 .overlay-false:hover {

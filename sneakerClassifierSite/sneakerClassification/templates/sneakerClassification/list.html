@@ -2,10 +2,11 @@
 <html lang="en" dir="ltr">
 
   <head>
+    <meta charset="utf-8">
     {% load static %}
 
-    <meta charset="utf-8">
     <link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{% static 'sneakerClassification/list_style.css' %}">
     <title></title>
   </head>
@@ -18,7 +19,7 @@
             <a class=nav-link id=nav-left href="{% url 'sneakerClassification:index'%}">Upload</a>
           </li>
           <li>
-            <a class=nav-main>Sneaker Classifier</a>
+            <a class=nav-main>SneakerClassifier</a>
           </li>
           <li>
             <a class=nav-link id=nav-right href="{% url 'sneakerClassification:list'%}">View</a>
@@ -37,11 +38,11 @@
         </div>
         {% elif sneaker_image.prediction_valid is True %}
         <div class = overlay-true>
-          Classification validated as: <br><strong>True</strong>
+          Classification validated as: <br><strong>Correct</strong>
         </div>
         {% else %}
         <div class = overlay-false>
-          Classification validated as: <br><strong>False</strong>
+          Classification validated as: <br><strong>Incorrect</strong>
         </div>
         {% endif %}
         <div class=img-name>

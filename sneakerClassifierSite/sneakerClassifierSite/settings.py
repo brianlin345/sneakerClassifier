@@ -20,7 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'm069n(tyt3tpz)j07x!9-ex016j*vew2vojgpd@(nfn&&+9o#('
+SECRET_KEY = ''
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -73,7 +73,30 @@ WSGI_APPLICATION = 'sneakerClassifierSite.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
+'''
+if os.getenv('GAE_APPLICATION', None):
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.mysql',
+            'HOST': '/cloudsql/sneakerclassifier-278720:us-west2:sneakerclassifier-instance',
+            'USER': 'sneaker_upload',
+            'PASSWORD': 'dj@ngoshoes',
+            'NAME': 'sneaker_data',
+        }
+    }
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.mysql',
+            'HOST': '127.0.0.1',
+            'PORT': '3306',
+            'NAME': 'sneaker_data',
+            'USER': 'sneaker_upload',
+            'PASSWORD': 'dj@ngoshoes',
+        }
+    }
 
+'''
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -124,3 +147,4 @@ MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 MEDIA_URL = "/media/"
 
 #dj@ngoshoes
+#gcloud sql connection: sneakerclassifier-278720:us-west2:sneakerclassifier-instance

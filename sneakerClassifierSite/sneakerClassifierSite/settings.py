@@ -19,11 +19,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = ''
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
@@ -80,7 +78,7 @@ if os.getenv('GAE_APPLICATION', None):
             'ENGINE': 'django.db.backends.mysql',
             'HOST': '/cloudsql/sneakerclassifier-278720:us-west2:sneakerclassifier-instance',
             'USER': 'sneaker_upload',
-            'PASSWORD': 'dj@ngoshoes',
+            'PASSWORD': '',
             'NAME': 'sneaker_data',
         }
     }
@@ -92,7 +90,7 @@ else:
             'PORT': '3306',
             'NAME': 'sneaker_data',
             'USER': 'sneaker_upload',
-            'PASSWORD': 'dj@ngoshoes',
+            'PASSWORD': '',
         }
     }
 
@@ -145,6 +143,3 @@ STATIC_URL = '/static/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 MEDIA_URL = "/media/"
-
-#dj@ngoshoes
-#gcloud sql connection: sneakerclassifier-278720:us-west2:sneakerclassifier-instance
